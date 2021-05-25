@@ -7,10 +7,10 @@ const instance = axios.create({
 
 
 export const githubApi = {
-    getUserMainData(userName) {
+    getUser(userName) {
         return instance.get(`${userName}`)
     },
-    getUserReposData(userName) {
+    getRepos(userName) {
         return instance.get(`${userName}/repos`)
     }
 }

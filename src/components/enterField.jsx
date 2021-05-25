@@ -3,20 +3,21 @@ import React, {useState} from "react";
 
 export const EnterField = (props) => {
 
-    let [userName, setUserName] = useState('Enter GitHub username')
-    let [title, setTitle] = useState('')
+    let [title, setTitle] = useState('Enter GitHub username')
     let [editMode, setEditMode] = useState(false)
 
     const activateEditMode = () => {
         setEditMode(true)
+        setTitle('')
     }
     const activateViewMode = (title) => {
         if (title.trim() !== '') {
             setEditMode(false)
-            setUserName(title)
-            props.fetchUserData(title)
+            props.fetchUser(title)
         } else {
             setTitle('Title is required')
+            setEditMode(false)
+            props.fetchUser(title)
         }
     }
     const changeHandler = (event) => {
@@ -36,7 +37,7 @@ export const EnterField = (props) => {
                 autoFocus
             />
             : <>
-                <span onClick={activateEditMode}>{userName}</span>
+                <span onClick={activateEditMode}>{title}</span>
             </>
     )
 }
