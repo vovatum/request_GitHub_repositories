@@ -24,7 +24,7 @@ export const setUserAC = (user) => {
 }
 
 export const fetchUserTC = (userName) => (dispatch) => {
-    userName.length && githubApi.getUser(userName)
+   return userName.length && githubApi.getUser(userName)
         .then(res => res.data.login === userName
             && dispatch(setUserAC(res.data))
             && dispatch(setFetchUserErrorAC(false)))

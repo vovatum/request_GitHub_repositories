@@ -17,7 +17,6 @@ export const EnterField = (props) => {
         } else {
             setTitle('Title is required')
             setEditMode(false)
-            props.fetchUser(title)
         }
     }
     const changeHandler = (event) => {
