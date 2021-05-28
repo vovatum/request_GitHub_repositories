@@ -31,4 +31,13 @@ export const fetchReposTC = (userName, perPage, page) => (dispatch) => {
         .catch(() => dispatch(setFetchReposErrorAC(true)))
 }
 
+// export const fetchReposTC = (userName) => (dispatch) => {
+//     githubApi.getAllRepos(userName)
+//         .then(res => res.data[0].owner.login === userName
+//             && console.log(res.data.length)
+//             && dispatch(setReposAC(res.data))
+//             && dispatch(setFetchReposErrorAC(false)))
+//         .catch(() => dispatch(setFetchReposErrorAC(true)))
+// }
+
 

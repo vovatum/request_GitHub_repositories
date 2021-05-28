@@ -3,12 +3,14 @@ import thunk from "redux-thunk";
 import {userReducer} from "./userReducer";
 import {reposReducer} from "./reposReducer";
 import {errorsReducer} from "./errorsReducer";
+import {statusReducer} from "./statusReducer";
 
 
 const rootReducer = combineReducers({
     user: userReducer,
     repos: reposReducer,
-    errors: errorsReducer
+    errors: errorsReducer,
+    status: statusReducer
 })
 
 

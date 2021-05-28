@@ -12,5 +12,8 @@ export const githubApi = {
     },
     getRepos(userName, perPage, page) {
         return instance.get(`${userName}/repos?per_page=${perPage}&page=${page}`)
+    },
+    getAllRepos(userName) {
+        return instance.get(`${userName}/repos`)
     }
 }

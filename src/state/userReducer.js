@@ -1,5 +1,6 @@
 import {githubApi} from "../api/githubApi";
 import {setFetchUserErrorAC} from "./errorsReducer";
+import {setStatusAC} from "./statusReducer";
 
 
 const initialState = {}
@@ -24,10 +25,12 @@ export const setUserAC = (user) => {
 }
 
 export const fetchUserTC = (userName) => (dispatch) => {
-   return userName.length && githubApi.getUser(userName)
+    dispatch(setStatusAC(false))
+    return userName.length && githubApi.getUser(userName)
         .then(res => res.data.login === userName
             && dispatch(setUserAC(res.data))
             && dispatch(setFetchUserErrorAC(false)))
         .catch(() => dispatch(setFetchUserErrorAC(true)))
+
 }
 
