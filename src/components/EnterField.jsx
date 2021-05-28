@@ -26,7 +26,7 @@ export const EnterField = (props) => {
 
     return (
         editMode
-            ? <input
+            ? <input className={'enterField'}
                 value={title}
                 onChange={changeHandler}
                 onKeyPress={keyPressHandler}

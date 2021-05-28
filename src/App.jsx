@@ -7,7 +7,9 @@ import {Repos} from "./components/Repos";
 import {fetchReposTC} from "./state/reposReducer";
 import {useState} from "react";
 import {faSearch, faUser, faTimesCircle} from "@fortawesome/free-solid-svg-icons";
+import {faGithubSquare} from "@fortawesome/free-brands-svg-icons";
 import {Status} from "./components/Status";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 function App() {
@@ -37,7 +39,17 @@ function App() {
     return (
         <div className="app">
             <div className="header">
-                <EnterField fetchUser={fetchUser}/>
+                <div className={'baseColor'}>
+                    <FontAwesomeIcon className={'githubIcon'}
+                                     icon={faGithubSquare}/>
+                </div>
+                <div className={'container'}>
+                    <div className={'searchContainer'}>
+                        <FontAwesomeIcon className={'search'}
+                                         icon={faSearch}/>
+                        <EnterField fetchUser={fetchUser}/>
+                    </div>
+                </div>
             </div>
             <div className={'body'}>
                 {
