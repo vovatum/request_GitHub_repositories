@@ -10,22 +10,19 @@ export const EnterField = (props) => {
         setEditMode(true)
         setTitle('')
     }
-    const activateViewMode = (title) => {
-        if (title.trim() !== '') {
-            setEditMode(false)
-            props.fetchUser(title)
-        } else {
-            setTitle('Title is required')
-            setEditMode(false)
-        }
-    }
     const changeHandler = (event) => {
         setTitle(event.currentTarget.value)
     }
     const keyPressHandler = (event) => {
-        event.key === 'Enter' && activateViewMode(title)
+        if (event.key === 'Enter') {
+            if (title.trim() !== '') {
+                props.fetchUser(title)
+            } else {
+                setTitle('Title is required')
+                setEditMode(false)
+            }
+        }
     }
-
 
     return (
         editMode

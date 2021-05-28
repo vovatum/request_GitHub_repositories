@@ -5,6 +5,7 @@ import {fetchUserTC} from "./state/userReducer";
 import {User} from "./components/User";
 import {Repos} from "./components/Repos";
 import {fetchReposTC} from "./state/reposReducer";
+import {useState} from "react";
 
 
 function App() {
@@ -13,11 +14,15 @@ function App() {
     const repos = useSelector(state => state.repos)
     const errors = useSelector(state => state.errors)
     const dispatch = useDispatch()
+    const perPage = 4
 
     const fetchUser = (userName) => {
         dispatch(fetchUserTC(userName)).then((res) => {
-            !res.error && dispatch(fetchReposTC(userName))
+            !res.error && dispatch(fetchReposTC(userName, perPage, 1))
         })
+    }
+    const fetchRepos = (page) => {
+        dispatch(fetchReposTC(user.login, perPage, page))
     }
     console.log(user.login)
 
@@ -28,8 +33,15 @@ function App() {
                 <EnterField fetchUser={fetchUser}/>
             </div>
             <div className={'body'}>
-                <User user={user} error={errors.fetchUserError}/>
-                <Repos repos={repos} error={errors.fetchReposError} reposNum={user.public_repos}/>
+                <User user={user}
+                      error={errors.fetchUserError}
+                />
+                <Repos repos={repos}
+                       error={errors.fetchReposError}
+                       reposNum={user.public_repos}
+                       fetchRepos={fetchRepos}
+                       perPage={perPage}
+                />
             </div>
         </div>
     )

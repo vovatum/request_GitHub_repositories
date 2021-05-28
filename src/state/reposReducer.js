@@ -23,8 +23,8 @@ export const setReposAC = (repos) => {
     return {type: SET_REPOS, repos}
 }
 
-export const fetchReposTC = (userName) => (dispatch) => {
-    githubApi.getRepos(userName)
+export const fetchReposTC = (userName, perPage, page) => (dispatch) => {
+    githubApi.getRepos(userName, perPage, page)
         .then(res => res.data[0].owner.login === userName
             && dispatch(setReposAC(res.data))
             && dispatch(setFetchReposErrorAC(false)))
