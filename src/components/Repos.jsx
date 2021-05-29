@@ -12,25 +12,25 @@ export function Repos(props) {
 
     return (
         <div key={props.reposNum}>
-            <h1>Repositories({props.reposNum})</h1>
+            <h1 className={'repos'}>Repositories({props.reposNum})</h1>
             {
-                props.repos.map(repo => <ul key={repo.id}>
-                    <li>{repo.name}</li>
-                    <li>{repo.description}</li>
-                </ul>)
+                props.repos.map(repo => <div className={'repo'} key={repo.id}>
+                    <div className={'repoName'}>{repo.name}</div>
+                    <div className={'repoDescription'}>{repo.description}</div>
+                </div>)
             }
-            <ReactPaginate
-                previousLabel={'<'}
-                nextLabel={'>'}
-                breakLabel={'...'}
-                breakClassName={'break-me'}
-                pageCount={pageCount}
-                marginPagesDisplayed={1}
-                pageRangeDisplayed={2}
-                onPageChange={handlePageClick}
-                containerClassName={'pagination'}
-                activeClassName={'active'}
-            />
+            {/*<ReactPaginate*/}
+            {/*    previousLabel={'<'}*/}
+            {/*    nextLabel={'>'}*/}
+            {/*    breakLabel={'...'}*/}
+            {/*    breakClassName={'break-me'}*/}
+            {/*    pageCount={pageCount}*/}
+            {/*    marginPagesDisplayed={1}*/}
+            {/*    pageRangeDisplayed={2}*/}
+            {/*    onPageChange={handlePageClick}*/}
+            {/*    containerClassName={'pagination'}*/}
+            {/*    activeClassName={'active'}*/}
+            {/*/>*/}
         </div>
     )
 }
