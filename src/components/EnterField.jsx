@@ -26,11 +26,11 @@ export const EnterField = (props) => {
 
     return (
         editMode
-            ? <input className={'enterField'}
-                value={title}
-                onChange={changeHandler}
-                onKeyPress={keyPressHandler}
-                autoFocus
+            ? <input className={'inputField'}
+                     value={title}
+                     onChange={changeHandler}
+                     onKeyPress={keyPressHandler}
+                     autoFocus
             />
             : <>
                 <span onClick={activateEditMode}>{title}</span>

@@ -43,12 +43,10 @@ function App() {
                     <FontAwesomeIcon className={'githubIcon'}
                                      icon={faGithubSquare}/>
                 </div>
-                <div className={'container'}>
-                    <div className={'searchContainer'}>
-                        <FontAwesomeIcon className={'search'}
-                                         icon={faSearch}/>
-                        <EnterField fetchUser={fetchUser}/>
-                    </div>
+                <div className={'searchContainer'}>
+                    <FontAwesomeIcon className={'search'}
+                                     icon={faSearch}/>
+                    <EnterField fetchUser={fetchUser}/>
                 </div>
             </div>
             <div className={'body'}>
@@ -58,17 +56,19 @@ function App() {
                                   faIcon={faSearch}/>
                         : !errors.fetchUserError
                         ? <>
-                            < User user={user}
-                                   error={errors.fetchUserError}/>
-                            {
-                                !errors.fetchReposError
-                                    ? <Repos repos={repos}
-                                             reposNum={user.public_repos}
-                                             fetchRepos={fetchRepos}
-                                             perPage={perPage}/>
-                                    : <Status statusMessage={statusMessage.emptyRepos}
-                                              faIcon={faTimesCircle}/>
-                            }
+                            <User user={user}
+                                  error={errors.fetchUserError}/>
+                            <div className={'reposData'}>
+                                {
+                                    !errors.fetchReposError
+                                        ? <Repos repos={repos}
+                                                 reposNum={user.public_repos}
+                                                 fetchRepos={fetchRepos}
+                                                 perPage={perPage}/>
+                                        : <Status statusMessage={statusMessage.emptyRepos}
+                                                  faIcon={faTimesCircle}/>
+                                }
+                            </div>
                         </>
                         : <Status statusMessage={statusMessage.notUser}
                                   faIcon={faUser}/>
