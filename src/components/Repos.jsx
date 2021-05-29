@@ -15,22 +15,28 @@ export function Repos(props) {
             <h1 className={'repos'}>Repositories({props.reposNum})</h1>
             {
                 props.repos.map(repo => <div className={'repo'} key={repo.id}>
-                    <div className={'repoName'}>{repo.name}</div>
+                    <a href={repo.html_url} target="_blank" without rel="noreferrer"
+                       className={'repoName'}>{repo.name}</a>
                     <div className={'repoDescription'}>{repo.description}</div>
                 </div>)
             }
-            {/*<ReactPaginate*/}
-            {/*    previousLabel={'<'}*/}
-            {/*    nextLabel={'>'}*/}
-            {/*    breakLabel={'...'}*/}
-            {/*    breakClassName={'break-me'}*/}
-            {/*    pageCount={pageCount}*/}
-            {/*    marginPagesDisplayed={1}*/}
-            {/*    pageRangeDisplayed={2}*/}
-            {/*    onPageChange={handlePageClick}*/}
-            {/*    containerClassName={'pagination'}*/}
-            {/*    activeClassName={'active'}*/}
-            {/*/>*/}
+            <div className={'paginContainer'}>
+                <div>5-8 of 249 items</div>
+                <div>
+                    <ReactPaginate
+                        previousLabel={'<'}
+                        nextLabel={'>'}
+                        breakLabel={'...'}
+                        breakClassName={'break-me'}
+                        pageCount={pageCount}
+                        marginPagesDisplayed={1}
+                        pageRangeDisplayed={2}
+                        onPageChange={handlePageClick}
+                        containerClassName={'pagination'}
+                        activeClassName={'active'}
+                    />
+                </div>
+            </div>
         </div>
     )
 }
