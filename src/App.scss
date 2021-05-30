@@ -66,14 +66,15 @@
   .body {
     display: flex;
     justify-content: center;
+    align-items: center;
     min-height: 100vh;
 
 
     .userData {
       padding-left: 57px;
       padding-top: 39px;
-      margin-top: 72px;
       width: 370px;
+      margin-top: 72px;
 
       //border: 1px red dashed;
 
@@ -194,6 +195,8 @@
       text-align: center;
       width: 210px;
       color: rgba(128, 128, 128, 1);
+
+
 
       .icon {
         height: 64px;

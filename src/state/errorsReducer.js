@@ -1,6 +1,6 @@
 const initialState = {
-    // fetchUserError: false,
-    // fetchReposError: false
+    fetchUserError: false,
+    fetchReposError: false
 }
 
 const SET_FETCH_USER_ERROR = 'SET_FETCH_USER_ERROR'

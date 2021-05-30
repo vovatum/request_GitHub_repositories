@@ -1,5 +1,6 @@
 import {githubApi} from "../api/githubApi";
 import {setFetchReposErrorAC} from "./errorsReducer";
+import {isFetchingReposAC} from "./statusReducer";
 
 
 const initialState = []
@@ -24,20 +25,19 @@ export const setReposAC = (repos) => {
 }
 
 export const fetchReposTC = (userName, perPage, page) => (dispatch) => {
+    dispatch(isFetchingReposAC(true))
     githubApi.getRepos(userName, perPage, page)
-        .then(res => res.data[0].owner.login === userName
-            && dispatch(setReposAC(res.data))
-            && dispatch(setFetchReposErrorAC(false)))
-        .catch(() => dispatch(setFetchReposErrorAC(true)))
+        .then(res => {
+            if (res.data[0].owner.login === userName) {
+                dispatch(setReposAC(res.data))
+                dispatch(setFetchReposErrorAC(false))
+                dispatch(isFetchingReposAC(false))
+            }
+        })
+        .catch(() => {
+            dispatch(setReposAC([]))
+            dispatch(setFetchReposErrorAC(true))
+            dispatch(isFetchingReposAC(false))
+
+        })
 }
-
-// export const fetchReposTC = (userName) => (dispatch) => {
-//     githubApi.getAllRepos(userName)
-//         .then(res => res.data[0].owner.login === userName
-//             && console.log(res.data.length)
-//             && dispatch(setReposAC(res.data))
-//             && dispatch(setFetchReposErrorAC(false)))
-//         .catch(() => dispatch(setFetchReposErrorAC(true)))
-// }
-
-
