@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/request_GitHub_repositories/static/css/main.7590393c.chunk.css",
+    "main.js": "/request_GitHub_repositories/static/js/main.1b26935d.chunk.js",
+    "main.js.map": "/request_GitHub_repositories/static/js/main.1b26935d.chunk.js.map",
+    "runtime-main.js": "/request_GitHub_repositories/static/js/runtime-main.fd066bb4.js",
+    "runtime-main.js.map": "/request_GitHub_repositories/static/js/runtime-main.fd066bb4.js.map",
+    "static/js/2.421a9210.chunk.js": "/request_GitHub_repositories/static/js/2.421a9210.chunk.js",
+    "static/js/2.421a9210.chunk.js.map": "/request_GitHub_repositories/static/js/2.421a9210.chunk.js.map",
+    "static/js/3.b10f57e8.chunk.js": "/request_GitHub_repositories/static/js/3.b10f57e8.chunk.js",
+    "static/js/3.b10f57e8.chunk.js.map": "/request_GitHub_repositories/static/js/3.b10f57e8.chunk.js.map",
+    "index.html": "/request_GitHub_repositories/index.html",
+    "static/css/main.7590393c.chunk.css.map": "/request_GitHub_repositories/static/css/main.7590393c.chunk.css.map",
+    "static/js/2.421a9210.chunk.js.LICENSE.txt": "/request_GitHub_repositories/static/js/2.421a9210.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fd066bb4.js",
+    "static/js/2.421a9210.chunk.js",
+    "static/css/main.7590393c.chunk.css",
+    "static/js/main.1b26935d.chunk.js"
+  ]
+}
