@@ -1,0 +1,44 @@
+.arrowLinks {
+  color: #0064EB;
+  font-weight: bold;
+}
+
+
+.break-me {
+  letter-spacing: 0.1em;
+}
+
+.pagination {
+  //margin: 15px auto;
+  display: flex;
+  list-style: none;
+  outline: none;
+}
+
+.pagination > .active > a {
+  background-color: #0064EB;
+  border-color: #0064EB;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.pagination > li > a {
+  //border: 1px solid #0064EB;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: #0064EB;
+  border-color: #0064EB;
+  outline: none;
+}
+
+.pagination > li > a, .pagination > li > span {
+  color: #0064EB
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span {
+  border-radius: unset
+}
