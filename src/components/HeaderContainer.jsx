@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {fetchUserTC} from "../state/userReducer";
+import {fetchUserTC, setUserNameAC} from "../state/userReducer";
 import {Header} from "./Header";
 
 
@@ -7,11 +7,11 @@ export function HeaderContainer() {
 
     const dispatch = useDispatch()
 
-    const fetchUser = (userName) => {
+    const setUserName = (userName) => {
         dispatch(fetchUserTC(userName))
     }
 
     return (
-        <Header fetchUser={fetchUser}/>
+        <Header setUserName={setUserName}/>
     )
 }

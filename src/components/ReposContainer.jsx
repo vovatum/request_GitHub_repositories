@@ -1,39 +1,39 @@
+import {useDispatch, useSelector} from "react-redux";
+import {fetchReposTC, setCurrentPageAC} from "../state/reposReducer";
+import {useEffect} from "react";
+import {Preloader} from "./Preloader";
 import {Repos} from "./Repos";
 import {Status} from "./Status";
 import {faTimesCircle} from "@fortawesome/free-solid-svg-icons";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchReposTC} from "../state/reposReducer";
-import {useEffect} from "react";
-import {Preloader} from "./Preloader";
 
 
 export function ReposContainer() {
 
-    const user = useSelector(state => state.user)
-    const repos = useSelector(state => state.repos)
+    const userData = useSelector(state => state.user)
+    const reposData = useSelector(state => state.repos)
     const errors = useSelector(state => state.errors)
     const status = useSelector(state => state.status)
     const dispatch = useDispatch()
-    const perPage = 4
+
 
     useEffect(() => {
-        dispatch(fetchReposTC(user.login, perPage, 1))
-    }, [dispatch, user.login])
+        dispatch(fetchReposTC(userData.user.login, reposData.perPage, reposData.currentPage))
+    }, [dispatch, userData.user.login, reposData.currentPage, reposData.perPage])
 
-    const fetchRepos = (page) => {
-        dispatch(fetchReposTC(user.login, perPage, page))
+    const setCurrentPage = (numPage) => {
+        dispatch(setCurrentPageAC(numPage))
     }
 
     return (
         <div className={'reposData'}>
             {
                 status.isFetchingRepos
-                    ? <Preloader/>
+                    ? <div className={'loaderContainer'}><Preloader/></div>
                     : !errors.fetchReposError
-                    ? <Repos repos={repos}
-                             reposNum={user.public_repos}
-                             fetchRepos={fetchRepos}
-                             perPage={perPage}/>
+                    ? <Repos reposData={reposData}
+                             numRepos={userData.user.public_repos}
+                             setCurrentPage={setCurrentPage}
+                    />
                     : <Status errors={errors}
                               faIcon={faTimesCircle}/>
             }

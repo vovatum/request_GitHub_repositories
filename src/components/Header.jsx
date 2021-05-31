@@ -14,7 +14,7 @@ export function Header(props) {
             <div className={'searchContainer'}>
                 <FontAwesomeIcon className={'search'}
                                  icon={faSearch}/>
-                <EnterField fetchUser={props.fetchUser}/>
+                <EnterField setUserName={props.setUserName}/>
             </div>
         </>
 

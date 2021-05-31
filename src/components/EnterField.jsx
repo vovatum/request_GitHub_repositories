@@ -16,7 +16,7 @@ export const EnterField = (props) => {
     const keyPressHandler = (event) => {
         if (event.key === 'Enter') {
             if (title.trim() !== '') {
-                props.fetchUser(title)
+                props.setUserName(title)
             } else {
                 setTitle('Title is required')
                 setEditMode(false)
