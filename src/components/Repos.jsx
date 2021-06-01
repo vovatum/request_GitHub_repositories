@@ -1,5 +1,5 @@
+import '../styles/pagination.scss'
 import ReactPaginate from 'react-paginate';
-import './pagination.scss'
 
 
 export function Repos(props) {
@@ -51,7 +51,6 @@ export function Repos(props) {
                     pageRangeDisplayed={2}
                     onPageChange={handlePageClick}
                     subContainerClassName={"pages pagination"}
-
                     forcePage={props.reposData.currentPage - 1}
                 />
             </div>

@@ -1,4 +1,4 @@
-import './App.scss';
+import './styles/app.scss';
 import {useSelector} from "react-redux";
 import {UserContainer} from "./components/UserContainer";
 import {Preloader} from "./components/Preloader";

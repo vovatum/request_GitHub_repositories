@@ -1,9 +1,9 @@
-import './base.scss'
+import '../styles/base.scss'
 import {User} from "./User";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {ReposContainer} from "./ReposContainer";
-import {useEffect} from "react";
-import {fetchUserTC} from "../state/userReducer";
+// import {useEffect} from "react";
+// import {fetchUserTC} from "../state/userReducer";
 import {Status} from "./Status";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
 

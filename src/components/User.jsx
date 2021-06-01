@@ -1,8 +1,13 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser, faUserFriends} from "@fortawesome/free-solid-svg-icons";
+import {followRounder} from "../utils/folowRounder";
 
 
 export function  User(props) {
+
+    const followers=followRounder(props.userData.user.followers)
+    const following=followRounder(props.userData.user.following)
+
     return (
         <div className={'userData'} key={props.userData.user.id}>
             <img className={'userPhoto'}
@@ -14,9 +19,9 @@ export function  User(props) {
                        rel="noreferrer">{props.userData.user.login}</a>
                 </h4>
                 <FontAwesomeIcon className={'userIcon'} icon={faUserFriends}/>
-                <span className={'follow'}>{props.userData.user.followers} followers</span>
+                <span className={'follow'}>{followers} followers</span>
                 <FontAwesomeIcon className={'userIcon'} icon={faUser}/>
-                <span className={'follow'}>{props.userData.user.following} following</span>
+                <span className={'follow'}>{following} following</span>
             </div>
         </div>
     )

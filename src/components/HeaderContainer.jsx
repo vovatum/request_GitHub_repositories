@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {fetchUserTC, setUserNameAC} from "../state/userReducer";
+import {fetchUserTC} from "../state/userReducer";
 import {Header} from "./Header";
 
 
