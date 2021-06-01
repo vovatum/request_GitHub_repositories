@@ -21,9 +21,9 @@ export function Repos(props) {
     }
 
     return (
-        <div className={'reposContainer'} key={props.numRepos}>
-            <div>
-                <h1 className={'repos'}>Repositories({props.numRepos})</h1>
+        <div className={'reposDataContainer'}>
+            <div className={'reposContainer'} key={props.numRepos}>
+                <span className={'repos'}>Repositories({props.numRepos})</span>
                 {
                     props.reposData.repos.map(repo => {
                         return <div className={'repo'} key={repo.id}>
@@ -35,24 +35,24 @@ export function Repos(props) {
                 }
             </div>
             <div className={'paginContainer'}>
-                <div>
+                <div className={'paginItems'}>
                     {items}
                 </div>
-                <ReactPaginate
-                    containerClassName={'pagination'}
-                    activeClassName={'active'}
-                    previousLabel={'<'}
-                    previousLinkClassName={'arrowLinks'}
-                    nextLabel={'>'}
-                    nextLinkClassName={'arrowLinks'}
-                    breakClassName={'break-me'}
-                    pageCount={pageCount}
-                    marginPagesDisplayed={1}
-                    pageRangeDisplayed={2}
-                    onPageChange={handlePageClick}
-                    subContainerClassName={"pages pagination"}
-                    forcePage={props.reposData.currentPage - 1}
-                />
+                    <ReactPaginate
+                        containerClassName={'pagination'}
+                        activeClassName={'active'}
+                        previousLabel={'<'}
+                        previousLinkClassName={'arrowLinks'}
+                        nextLabel={'>'}
+                        nextLinkClassName={'arrowLinks'}
+                        breakClassName={'break-me'}
+                        pageCount={pageCount}
+                        marginPagesDisplayed={1}
+                        pageRangeDisplayed={2}
+                        onPageChange={handlePageClick}
+                        subContainerClassName={"pages pagination"}
+                        forcePage={props.reposData.currentPage - 1}
+                    />
             </div>
         </div>
     )

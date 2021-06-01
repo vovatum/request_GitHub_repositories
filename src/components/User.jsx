@@ -3,10 +3,10 @@ import {faUser, faUserFriends} from "@fortawesome/free-solid-svg-icons";
 import {followRounder} from "../utils/folowRounder";
 
 
-export function  User(props) {
+export function User(props) {
 
-    const followers=followRounder(props.userData.user.followers)
-    const following=followRounder(props.userData.user.following)
+    const followers = followRounder(props.userData.user.followers)
+    const following = followRounder(props.userData.user.following)
 
     return (
         <div className={'userData'} key={props.userData.user.id}>
@@ -18,10 +18,18 @@ export function  User(props) {
                     <a className={'userName'} href={props.userData.user.html_url} target="_blank" without
                        rel="noreferrer">{props.userData.user.login}</a>
                 </h4>
-                <FontAwesomeIcon className={'userIcon'} icon={faUserFriends}/>
-                <span className={'follow'}>{followers} followers</span>
-                <FontAwesomeIcon className={'userIcon'} icon={faUser}/>
-                <span className={'follow'}>{following} following</span>
+
+                <div className={'followContainer'}>
+                    <div>
+                        <FontAwesomeIcon className={'userIcon'} icon={faUserFriends}/>
+                        <span className={'follow'}>{followers} followers</span>
+                    </div>
+                    <div>
+                        <FontAwesomeIcon className={'userIcon'} icon={faUser}/>
+                        <span className={'follow'}>{following} following</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     )

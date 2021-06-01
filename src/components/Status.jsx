@@ -1,4 +1,4 @@
-import '../styles/base.scss'
+import '../styles/some.scss'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 

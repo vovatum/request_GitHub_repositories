@@ -1,4 +1,4 @@
-import '../styles/base.scss'
+import '../styles/some.scss'
 import {User} from "./User";
 import {useSelector} from "react-redux";
 import {ReposContainer} from "./ReposContainer";
