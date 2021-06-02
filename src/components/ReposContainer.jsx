@@ -1,3 +1,5 @@
+import '../styles/reposData.scss'
+import '../styles/general.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {fetchReposTC, setCurrentPageAC} from "../state/reposReducer";
 import {useEffect} from "react";

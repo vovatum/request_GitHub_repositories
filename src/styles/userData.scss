@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+.userData {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3%;
+  padding-top: 3%;
+  width: 27%;
+  @media only screen and (max-width: 740px) {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .userPhoto {
+    width: 280px;
+    border-radius: 280px;
+    margin: 0 5% 3% 0;
+    @media only screen and (max-width: 1199px) {
+      width: 210px;
+      height: 210px;
+      border-radius: 210px;
+    }
+    @media only screen and (max-width: 864px) {
+      width: 170px;
+      height: 170px;
+      border-radius: 170px;
+    }
+    @media only screen and (max-width: 540px) {
+      width: 110px;
+      height: 110px;
+      border-radius: 110px;
+    }
+  }
+
+  .userFullName {
+    font-family: Inter, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 130%;
+    margin-bottom: 12px;
+    @media only screen and (max-width: 540px) {
+      font-size: 22px;
+      margin: 0;
+    }
+  }
+
+  .userName {
+    font-family: Inter, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #0064EB;
+    margin-top: 0;
+    text-decoration: none;
+    @media only screen and (max-width: 540px) {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+  }
+
+  .followContainer {
+    display: flex;
+    @media only screen and (max-width: 1199px) {
+      flex-direction: column;
+    }
+    @media only screen and (max-width: 740px) {
+      flex-direction: row;
+    }
+    @media only screen and (max-width: 540px) {
+      flex-direction: column;
+      padding-bottom: 6%;
+    }
+
+    .follow {
+      font-family: Inter, serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 150%;
+      color: #000000;
+      margin-right: 20px;
+      @media only screen and (max-width: 540px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .userIcon {
+    color: rgba(128, 128, 128, 1);
+    margin-right: 10px;
+  }
+}

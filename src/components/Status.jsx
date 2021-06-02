@@ -1,4 +1,4 @@
-import './base.scss'
+import '../styles/general.scss'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
@@ -11,9 +11,11 @@ export function Status(props) {
             : 'Start with searching a GitHub user'
 
     return (
-        <div className={'status'}>
-            <FontAwesomeIcon className={'icon'} icon={props.faIcon}/>
-            <span className={'statusMessage'}>{statusMessage}</span>
+        <div className={'statusContainer'}>
+            <div className={'status'}>
+                <FontAwesomeIcon className={'icon'} icon={props.faIcon}/>
+                <span className={'statusMessage'}>{statusMessage}</span>
+            </div>
         </div>
     )
 }

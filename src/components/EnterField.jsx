@@ -16,7 +16,7 @@ export const EnterField = (props) => {
     const keyPressHandler = (event) => {
         if (event.key === 'Enter') {
             if (title.trim() !== '') {
-                props.setUserName(title)
+                props.setUserName(title.toLocaleLowerCase())
             } else {
                 setTitle('Title is required')
                 setEditMode(false)
@@ -33,7 +33,8 @@ export const EnterField = (props) => {
                      autoFocus
             />
             : <>
-                <span onClick={activateEditMode}>{title}</span>
+                <span className={'defaultMessage'}
+                      onClick={activateEditMode}>{title}</span>
             </>
     )
 }
