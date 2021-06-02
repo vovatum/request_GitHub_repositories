@@ -33,7 +33,8 @@ export const EnterField = (props) => {
                      autoFocus
             />
             : <>
-                <span onClick={activateEditMode}>{title}</span>
+                <span className={'defaultMessage'}
+                      onClick={activateEditMode}>{title}</span>
             </>
     )
 }

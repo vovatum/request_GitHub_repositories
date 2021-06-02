@@ -1,3 +1,4 @@
+import '../styles/reposData.scss'
 import '../styles/pagination.scss'
 import ReactPaginate from 'react-paginate';
 
@@ -20,6 +21,15 @@ export function Repos(props) {
         props.setCurrentPage(selectedPage)
     }
 
+    const previousLinkClassName = props.reposData.currentPage === 1
+        ? 'disabledArrowLink'
+        : 'arrowLink'
+    const nextLinkClassName = props.reposData.currentPage === pageCount
+        ? 'disabledArrowLink'
+        : 'arrowLink'
+
+    console.log(props.reposData.currentPage )
+
     return (
         <div className={'reposDataContainer'}>
             <div className={'reposContainer'} key={props.numRepos}>
@@ -38,21 +48,21 @@ export function Repos(props) {
                 <div className={'paginItems'}>
                     {items}
                 </div>
-                    <ReactPaginate
-                        containerClassName={'pagination'}
-                        activeClassName={'active'}
-                        previousLabel={'<'}
-                        previousLinkClassName={'arrowLinks'}
-                        nextLabel={'>'}
-                        nextLinkClassName={'arrowLinks'}
-                        breakClassName={'break-me'}
-                        pageCount={pageCount}
-                        marginPagesDisplayed={1}
-                        pageRangeDisplayed={2}
-                        onPageChange={handlePageClick}
-                        subContainerClassName={"pages pagination"}
-                        forcePage={props.reposData.currentPage - 1}
-                    />
+                <ReactPaginate
+                    containerClassName={'pagination'}
+                    activeClassName={'active'}
+                    previousLabel={'<'}
+                    previousLinkClassName={previousLinkClassName}
+                    nextLabel={'>'}
+                    nextLinkClassName={nextLinkClassName}
+                    breakClassName={'break-me'}
+                    pageCount={pageCount}
+                    marginPagesDisplayed={1}
+                    pageRangeDisplayed={2}
+                    onPageChange={handlePageClick}
+                    subContainerClassName={"pages pagination"}
+                    forcePage={props.reposData.currentPage - 1}
+                />
             </div>
         </div>
     )

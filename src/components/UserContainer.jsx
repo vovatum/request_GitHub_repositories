@@ -1,4 +1,5 @@
-import '../styles/some.scss'
+import '../styles/general.scss'
+import '../styles/userData.scss'
 import {User} from "./User";
 import {useSelector} from "react-redux";
 import {ReposContainer} from "./ReposContainer";

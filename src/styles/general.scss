@@ -2,294 +2,96 @@
   box-sizing: border-box;
 }
 
-.header {
+.loaderContainer {
   display: flex;
+  justify-content: center;
   align-items: center;
-  //position: fixed;
-  background: #0064EB;
-  height: 72px;
-  width: 100%;
-  @media only screen and (max-width: 430px) {
-    height: 62px;
-  }
-
-  .baseColor {
-    display: flex;
-    align-items: center;
-    height: 45px;
-    width: 45px;
-    background: #FFFFFF;
-    margin-left: 41px;
-    border-radius: 6px;
-    @media only screen and (max-width: 740px) {
-      margin-left: 23px;
-    }
-    @media only screen and (max-width: 540px) {
-      margin-left: 15px;
-
-    }
-
-    .githubIcon {
-      height: 70px;
-      width: 70px;
-      color: #0064EB;
-      margin-left: -8px;
-      @media only screen and (max-width: 540px) {
-        height: 60px;
-        width: 60px;
-        margin-left: -7px;
-      }
-    }
-  }
-
-  .searchContainer {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    width: 500px;
-    margin-left: 21px;
-    background: #FFFFFF;
-    border-radius: 6px;
-    color: rgba(128, 128, 128, 1);
-    @media only screen and (max-width: 740px) {
-      width: 70%;
-      height: 37px;
-    }
-    @media only screen and (max-width: 430px) {
-      width: 60%;
-      height: 35px;
-    }
-
-    .search {
-      margin-right: 11px;
-      margin-left: 19px;
-      @media only screen and (max-width: 540px) {
-        height: 16px;
-      }
-    }
-
-    .inputField {
-      width: 87%;
-      color: #000000;
-      font-family: Inter, sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      text-align: left;
-      outline: none;
-      border: none;
-    }
-  }
-}
-
-.body {
-  display: flex;
-  justify-content: space-around;
   min-height: 100vh;
-  background: #E5E5E5;
 
-  @media only screen and (max-width: 740px) {
-    flex-direction: column;
-  }
-
-
-  .userData {
-    display: flex;
-    flex-direction: column;
-    padding-left: 3%;
-    padding-top: 3%;
-    width: 27%;
+  .loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #0064EB; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
     @media only screen and (max-width: 740px) {
-      flex-direction: row;
-      width: 100%;
+      width: 100px;
+      height: 100px;
     }
     @media only screen and (max-width: 540px) {
-      align-items: center;
-    }
-
-    .userPhoto {
-      width: 280px;
-      border-radius: 280px;
-      margin: 0 5% 3% 0;
-      @media only screen and (max-width: 1199px) {
-        width: 210px;
-        height: 210px;
-        border-radius: 210px;
-      }
-      @media only screen and (max-width: 864px) {
-        width: 170px;
-        height: 170px;
-        border-radius: 170px;
-      }
-      @media only screen and (max-width: 540px) {
-        width: 110px;
-        height: 110px;
-        border-radius: 110px;
-      }
-    }
-
-    .userFullName {
-      font-family: Inter, serif;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 26px;
-      line-height: 130%;
-      margin-bottom: 12px;
-      @media only screen and (max-width: 540px) {
-        font-size: 22px;
-        margin: 0;
-      }
-    }
-
-    .userName {
-      font-family: Inter, serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 18px;
-      line-height: 22px;
-      color: #0064EB;
-      margin-top: 0;
-      text-decoration: none;
-      @media only screen and (max-width: 540px) {
-        font-size: 14px;
-        margin-bottom: 0;
-      }
-    }
-
-    .followContainer {
-      display: flex;
-      @media only screen and (max-width: 1199px) {
-        flex-direction: column;
-      }
-      @media only screen and (max-width: 740px) {
-        flex-direction: row;
-      }
-      @media only screen and (max-width: 540px) {
-        flex-direction: column;
-        padding-bottom: 6%;
-      }
-
-      .follow {
-        font-family: Inter, serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 150%;
-        color: #000000;
-        margin-right: 20px;
-        @media only screen and (max-width: 540px) {
-          font-size: 14px;
-        }
-      }
-    }
-
-    .userIcon {
-      color: rgba(128, 128, 128, 1);
-      margin-right: 10px;
+      width: 80px;
+      height: 80px;
     }
   }
 
-  .reposData {
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    width: 73%;
-    @media only screen and (max-width: 740px) {
-      width: 100%;
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
     }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
 
-    .reposDataContainer {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      min-height: 100vh;
-      padding: 2% 5%;
 
-      .reposContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100%;
-        margin-bottom: 24px;
+.statusContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 
-        .repos {
-          font-family: Inter, serif;
-          font-size: 32px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: 42px;
-          text-align: left;
-          margin-bottom: 0;
-          @media only screen and (max-width: 540px) {
-            font-size: 24px;
-          }
-        }
+  .status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 210px;
+    color: rgba(128, 128, 128, 1);
 
-        .repo {
-          height: 112px;
-          width: 100%;
-          background: rgba(255, 255, 255, 1);
-          border-radius: 6px;
-          margin: 24px 0 0;
-          padding: 24px 32px;
-          @media only screen and (max-width: 540px) {
-            margin: 10px 0 0;
-            padding: 12px 16px;
-            height: 85px;
 
-          }
-
-          .repoName {
-            font-family: Inter, serif;
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 29px;
-            text-align: left;
-            color: #0064EB;
-            text-decoration: none;
-            @media only screen and (max-width: 540px) {
-              font-size: 20px;
-            }
-          }
-
-          .repoDescription {
-            font-family: Inter, serif;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 19px;
-            text-align: left;
-            margin-top: 16px;
-            @media only screen and (max-width: 540px) {
-              font-size: 12px;
-              margin-top: 6px;
-            }
-          }
-        }
+    .icon {
+      height: 64px;
+      width: 64px;
+      margin-bottom: 40px;
+      @media only screen and (max-width: 740px) {
+        height: 56px;
+        width: 56px;
+      }
+      @media only screen and (max-width: 540px) {
+        height: 50px;
+        width: 50px;
       }
 
-      .paginContainer {
-        min-height: 30px;
-        max-width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        padding-right: 23px;
+    }
 
-        font-family: Inter, serif;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        color: rgba(128, 128, 128, 1);
-
-        @media only screen and (max-width: 540px) {
-          font-size: 12px;
-          flex-direction: column;
-          padding-right: 0;
-          align-items: flex-end;
-        }
+    .statusMessage {
+      font-family: Inter, serif;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 31px;
+      letter-spacing: 0;
+      @media only screen and (max-width: 740px) {
+        font-size: 20px;
+        width: 200px;
+      }
+      @media only screen and (max-width: 540px) {
+        font-size: 16px;
+        width: 165px;
       }
     }
   }
 }
+
+@mixin truncateText{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
 

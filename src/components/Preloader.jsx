@@ -1,4 +1,4 @@
-import '../styles/some.scss'
+import '../styles/general.scss'
 
 
 export function Preloader() {
